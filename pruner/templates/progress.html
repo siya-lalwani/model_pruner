@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress</title>
+</head>
+<body>
+<h2>Pruning in progress...</h2>
+
+<div id="progress">0%</div>
+
+<script>
+    const jobId = "{{ job_id }}";
+    
+    setInterval(async function(){
+        const res = await fetch(`/job_status/${jobId}/`);
+        const data = await res.json();
+    
+        document.getElementById("progress").innerText =
+            data.progress + "% - " + data.status;
+    
+        if(data.status === "DONE"){
+            window.location.href = "/result/";
+        }
+    }, 2000);
+    </script>
+    
+
+</body>
+</html>

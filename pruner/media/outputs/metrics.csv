@@ -1,0 +1,8 @@
+Metric,Original,Pruned
+Accuracy (%),32.72,29.39
+Parameters,5418.0,5418.0
+Model Size (MB),0.02,0.02
+FLOPs (GFLOPs),0.08,0.08
+Inference Time (ms),9.6,7.25
+Sparsity (%),0.0,10.08
+Compression Ratio,1.0,1.0

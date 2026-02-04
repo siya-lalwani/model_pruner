@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Pruning</title>
+</head>
+<body>
+<h2>Upload Model</h2>
+<form method="post" enctype="multipart/form-data" action="/prune/">
+    {% csrf_token %}
+    <input type="hidden" name="form_type" value="upload">
+    {{ upload_form.as_p }}
+    <button type="submit">Prune Model</button>
+</form>
+
+<hr>
+
+<h2>Define Model via Specs</h2>
+<form method="post" action="/prune/">
+    {% csrf_token %}
+    <input type="hidden" name="form_type" value="spec">
+    {{ spec_form.as_p }}
+    <button type="submit">Build & Prune</button>
+</form>
+</body>
+</html>
